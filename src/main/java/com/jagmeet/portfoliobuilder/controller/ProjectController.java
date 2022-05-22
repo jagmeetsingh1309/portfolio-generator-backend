@@ -1,6 +1,6 @@
 package com.jagmeet.portfoliobuilder.controller;
 
-import com.jagmeet.portfoliobuilder.model.Project;
+import com.jagmeet.portfoliobuilder.entities.Project;
 import com.jagmeet.portfoliobuilder.service.ProjectService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

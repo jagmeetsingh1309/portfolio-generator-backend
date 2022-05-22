@@ -1,4 +1,4 @@
-package com.jagmeet.portfoliobuilder.model;
+package com.jagmeet.portfoliobuilder.entities;
 
 
 import lombok.Data;

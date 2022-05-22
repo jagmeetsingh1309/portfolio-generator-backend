@@ -1,7 +1,7 @@
 package com.jagmeet.portfoliobuilder.service;
 
 import com.jagmeet.portfoliobuilder.exceptions.NotFoundException;
-import com.jagmeet.portfoliobuilder.model.Project;
+import com.jagmeet.portfoliobuilder.entities.Project;
 import com.jagmeet.portfoliobuilder.repository.ProjectRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
