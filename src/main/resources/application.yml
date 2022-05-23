@@ -1,5 +1,10 @@
+### mongodb properties
 spring:
   data:
     mongodb:
       database: portfolio-creater
       uri: mongodb+srv://jagmeet:jagmeet0151@cluster0.nptqk.mongodb.net/portfolio-creater?retryWrites=true&w=majority
+
+#### jwt properties
+jwt:
+  secret: javainuse
