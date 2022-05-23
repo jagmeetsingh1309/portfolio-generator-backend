@@ -1,5 +1,6 @@
 package com.jagmeet.portfoliobuilder.controller;
 
+import com.jagmeet.portfoliobuilder.dto.ProjectDto;
 import com.jagmeet.portfoliobuilder.entities.Project;
 import com.jagmeet.portfoliobuilder.service.ProjectService;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +29,12 @@ public class ProjectController {
         return projectService.getAllProjects();
     }
 
+    @GetMapping("/user")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Project> getAllProjectsByUser(){
+        return projectService.getAllProjectsByUser();
+    }
+
     @GetMapping("/{projectId}")
     @ResponseStatus(HttpStatus.OK)
     public Project getProjectById(@PathVariable String projectId){
@@ -37,9 +44,9 @@ public class ProjectController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProject(@RequestBody Project project){
-        log.info("### Creating project with values: {}",project);
-        projectService.createProject(project);
+    public void createProject(@RequestBody ProjectDto projectDto){
+        log.info("### Creating project with values: {}",projectDto);
+        projectService.createProject(projectDto);
     }
 
     @PutMapping("/{projectId}")
