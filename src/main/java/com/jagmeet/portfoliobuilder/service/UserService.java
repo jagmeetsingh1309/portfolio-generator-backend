@@ -1,6 +1,7 @@
 package com.jagmeet.portfoliobuilder.service;
 
 import com.jagmeet.portfoliobuilder.entities.User;
+import com.jagmeet.portfoliobuilder.exceptions.NotFoundException;
 import com.jagmeet.portfoliobuilder.exceptions.UserAlreadyExistsException;
 import com.jagmeet.portfoliobuilder.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,11 @@ public class UserService {
     public UserService(UserRepository userRepository,PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+    }
+
+    public User findUserByUserName(String username){
+        return userRepository.findByUserName(username)
+                .orElseThrow(() -> new NotFoundException("User with username: " + username + " not found"));
     }
 
     public void createNewUser(
