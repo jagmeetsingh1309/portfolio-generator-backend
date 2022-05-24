@@ -5,7 +5,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "testimonial")
+@Document(collection = "testimonials")
 @Data
 public class Testimonial {
 
@@ -17,4 +17,6 @@ public class Testimonial {
     String authorMail;
     String authorPosition;
     String authorCompany;
+    String profileId;
+
 }
