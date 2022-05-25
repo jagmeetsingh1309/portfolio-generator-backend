@@ -30,8 +30,8 @@ public class ProjectService {
     }
 
     public List<Project> getAllProjectsByUser(){
-        String username = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return projectRepository.findByCreatedByUserName(username);
+        User user = userService.loadUserFromSecurityContext();
+        return projectRepository.findByCreatedBy(user.getId());
     }
 
     public Project getProjectById(String projectId){

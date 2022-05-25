@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface ProjectRepository extends MongoRepository<Project,String> {
 
-    List<Project> findByCreatedByUserName(String username);
+    List<Project> findByCreatedBy(String id);
 
 }
